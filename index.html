@@ -12,17 +12,23 @@
 </head>
 <body>
 
-    <!-- menu container -->
-    <div>
+     <!-- heading -->
+     <h1 class="heading">Memory game</h1>
 
-        <!-- heading -->
-        <h1 class="heading">Memory game</h1>
+    <!-- menu container -->
+    <div class="container">
 
         <!-- name input form -->
-        <form></form>
+        <div class="form-container">
+            <p>Welcome!</p>
+            <p>Tell us your name and let the game begin!</p>
+            <form>
+                <input class="input" type="text">
+            </form>
+        </div>
 
         <!-- play button -->
-        <button class="button" id="play-btn"></button>
+        <button class="button" id="play-btn" onclick="document.location='gamepage.html'">Play</button>
 
         <!-- instruction button -->
         <button class="button" id="instruction-btn"></button>
