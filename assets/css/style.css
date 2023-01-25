@@ -52,3 +52,16 @@ body {
 input{
     outline: none;
 }
+
+
+/* game page*/
+
+.game-container{
+    height: 80vh;
+    max-width: 90vw;
+    max-height: 90vw;
+    width: 80vh;
+    background-color: #191B10;
+    display: block;
+    margin: auto;
+}
