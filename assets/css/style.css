@@ -62,8 +62,16 @@ input{
     max-height: 90vw;
     width: 80vh;
     background-color: #191B10;
-    display: block;
     margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding:5px;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.grid-item{
+    background-color: grey;
 }
 
 .score-flexbox{
