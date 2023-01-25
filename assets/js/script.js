@@ -1,12 +1,12 @@
 /*disable printscreen posibility*/
 
-/* set variables for:
-grid size
-number of squares to light up
-score
-lives 
-tiles clicked var
-name*/
+
+let gridSize = 9;
+let squaresLight = 5;
+let score = 0;
+let lives = 3;
+let tilesClicked = 0;
+let name;
 
 
 /*listener on loading the page
