@@ -2,28 +2,44 @@
 
 
 let gridSize = 9;
-let squaresLight = 5;
+let squaresLight = 2;
 let score = 0;
 let lives = 3;
 let tilesClicked = 0;
-let name;
-
+let userName;
+let tilesPickedIndex = [];
 
 /*listener on loading the page
-set score
-update lives
-generate grid from variables
-populate grid with squares
+
 set how many squares to light up
 pick tiles to light up */
 
 /*listener press play
-activate play function
-    hide the play button
-    show timer
-    light up squares
-    count to 3 
-    hide squares*/
+    activate play function
+        generate grid from variables DONE
+        populate grid with squares DONE
+        set how many squares to light up Done
+        pick tiles to light up
+        hide the play button
+        show timer
+        light up squares
+        count to 3 
+        hide squares*/
+        
+let playButton = document.getElementById("start-btn");
+
+playButton.addEventListener("click", playGame);
+
+function playGame(){
+    let gameContainer = document.getElementById("game-container");
+    gameContainer.innerHTML = '';
+    for (var i=0; i<gridSize; i++){
+        gameContainer.innerHTML = gameContainer.innerHTML + " <div class='grid-item'></div>";
+    }
+} 
+    
+
+
 
 /*listener click on tile
 check if tile clicked is right

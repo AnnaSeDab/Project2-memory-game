@@ -56,7 +56,7 @@ input{
 
 /* game page*/
 
-.game-container{
+#game-container{
     height: 80vh;
     max-width: 90vw;
     max-height: 90vw;
