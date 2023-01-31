@@ -38,10 +38,16 @@ function playGame(){
     }
 
     squaresLight++;
+    let x = 0;
     
-    let tileIndex = Math.floor(Math.random() * (gridSize + 1));
-    let allTiles = document.getElementsByClassName("grid-item");
-    allTiles[tileIndex].style.backgroundColor = "red";  
+    while (x < squaresLight){
+        let tileIndex = Math.floor(Math.random() * (gridSize + 1));
+        let allTiles = document.getElementsByClassName("grid-item");
+        if (allTiles[tileIndex].className === "grid-item"){
+            allTiles[tileIndex].className = "lit-tile";
+            i++;
+        }
+    }
 } 
     
 
