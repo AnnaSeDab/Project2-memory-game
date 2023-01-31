@@ -36,6 +36,12 @@ function playGame(){
     for (var i=0; i<gridSize; i++){
         gameContainer.innerHTML = gameContainer.innerHTML + " <div class='grid-item'></div>";
     }
+
+    squaresLight++;
+    
+    let tileIndex = Math.floor(Math.random() * (gridSize + 1));
+    let allTiles = document.getElementsByClassName("grid-item");
+    allTiles[tileIndex].style.backgroundColor = "red";  
 } 
     
 
