@@ -53,6 +53,8 @@ function playGame(){
     };  
 
     setTimeout(timeOut, 1000);
+
+    document.getElementById('start-btn').style.visibility = 'hidden';
 } 
 
 
