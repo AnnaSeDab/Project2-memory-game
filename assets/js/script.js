@@ -1,14 +1,14 @@
 /*disable printscreen posibility*/
 
 
-let gridSize = 2;
+let gridSize = 4;
 let squaresLight = 2;
 let score = 0;
 let lives = 3;
 let tilesClicked = 0;
 let userName;
 let tilesPickedIndex = [];
-let addToGrid = 0;
+let addToGrid = 3;
 let numberOfColumns = "auto auto";
 let gameContainer;
 
@@ -35,7 +35,7 @@ playButton.addEventListener("click", playGame);
 
 function playGame(){
     addToGrid = addToGrid + 2;
-    gridSize = gridSize + 5 + addToGrid;
+    gridSize = gridSize + addToGrid;
 
     numberOfColumns =  numberOfColumns.concat(" auto");
     document.getElementById('game-container').style.gridTemplateColumns = numberOfColumns;
@@ -53,7 +53,6 @@ function playGame(){
     };  
 
     setTimeout(timeOut, 1000);
-
 } 
 
 
