@@ -37,18 +37,19 @@ function playGame(){
         gameContainer.innerHTML = gameContainer.innerHTML + " <div class='grid-item'></div>";
     }
 
-    squaresLight++;
-    let x = 0;
-    
-    while (x < squaresLight){
+    if (squaresLight < gridSize){
+        squaresLight++
+        assignLitTiles();
+        
+    };  
+} 
+
+
+function assignLitTiles(){   
         let tileIndex = Math.floor(Math.random() * (gridSize + 1));
         let allTiles = document.getElementsByClassName("grid-item");
-        if (allTiles[tileIndex].className === "grid-item"){
-            allTiles[tileIndex].className = "lit-tile";
-            i++;
-        }
-    }
-} 
+            allTiles[tileIndex].classList.toggle("lit-tile");
+}
     
 
 
