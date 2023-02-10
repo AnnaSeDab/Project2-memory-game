@@ -42,6 +42,7 @@ function playGame(){
         assignLitTiles();
         
     };  
+    setTimeout(timeOut, 1000);
 } 
 
 
@@ -49,6 +50,14 @@ function assignLitTiles(){
         let tileIndex = Math.floor(Math.random() * (gridSize + 1));
         let allTiles = document.getElementsByClassName("grid-item");
             allTiles[tileIndex].classList.toggle("lit-tile");
+}
+
+function timeOut(){
+    let gameContainer = document.getElementById("game-container");
+    gameContainer.innerHTML = '';
+    for (var i=0; i<gridSize; i++){
+        gameContainer.innerHTML = gameContainer.innerHTML + " <div class='grid-item'></div>";
+    }
 }
     
 
