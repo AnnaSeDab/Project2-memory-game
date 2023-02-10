@@ -1,13 +1,16 @@
 /*disable printscreen posibility*/
 
 
-let gridSize = 9;
+let gridSize = 2;
 let squaresLight = 2;
 let score = 0;
 let lives = 3;
 let tilesClicked = 0;
 let userName;
 let tilesPickedIndex = [];
+let addToGrid = 0;
+let numberOfColumns = "auto auto";
+let gameContainer;
 
 /*listener on loading the page
 
@@ -31,6 +34,13 @@ let playButton = document.getElementById("start-btn");
 playButton.addEventListener("click", playGame);
 
 function playGame(){
+    addToGrid = addToGrid + 2;
+    gridSize = gridSize + 5 + addToGrid;
+
+    numberOfColumns =  numberOfColumns.concat(" auto");
+    document.getElementById('game-container').style.gridTemplateColumns = numberOfColumns;
+
+
     let gameContainer = document.getElementById("game-container");
     gameContainer.innerHTML = '';
     for (var i=0; i<gridSize; i++){
@@ -39,10 +49,11 @@ function playGame(){
 
     if (squaresLight < gridSize){
         squaresLight++
-        assignLitTiles();
-        
+        assignLitTiles();   
     };  
+
     setTimeout(timeOut, 1000);
+
 } 
 
 
