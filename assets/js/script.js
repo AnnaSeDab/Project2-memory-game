@@ -63,6 +63,13 @@ function playGame(){
     });
 
 
+    /* basically copypasted so credit https://stackoverflow.com/questions/19655189/javascript-click-event-listener-on-class*/
+
+    document.body.addEventListener('click', function (evt) {
+        if (evt.target.classList.contains('wrong')) {
+            alert("wrong!");
+        }
+    }, false);
 } 
 
 function assignLitTiles(i){   
