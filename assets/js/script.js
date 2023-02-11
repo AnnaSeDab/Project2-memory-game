@@ -1,6 +1,6 @@
 /*disable printscreen posibility*/
 
-
+let level = 0;
 let gridSize = 4;
 let squaresLight = 2;
 let score = 0;
@@ -34,14 +34,15 @@ let playButton = document.getElementById("start-btn");
 playButton.addEventListener("click", playGame);
 
 function playGame(){
+
+    if (level === 0 || level%3 === 0){
     addToGrid = addToGrid + 2;
     gridSize = gridSize + addToGrid;
-
-    let tileIndex = Math.floor(Math.random() * (gridSize + 1));
-
     numberOfColumns =  numberOfColumns.concat(" auto");
     document.getElementById('game-container').style.gridTemplateColumns = numberOfColumns;
+    }
 
+    let tileIndex = Math.floor(Math.random() * (gridSize + 1));
 
     let gameContainer = document.getElementById("game-container");
     gameContainer.innerHTML = '';
@@ -61,6 +62,7 @@ function playGame(){
     document.getElementById("right").addEventListener("click",function rightAnswer() {
         alert("Hello world!");
         document.getElementById('start-btn').style.visibility = 'visible';
+        level++;
     });
 
 
