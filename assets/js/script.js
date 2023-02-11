@@ -32,6 +32,7 @@ pick tiles to light up */
         hide squares*/
         
 let playButton = document.getElementById("start-btn");
+document.getElementById('check-btn').style.visibility = 'hidden';
 
 playButton.addEventListener("click", playGame);
 
@@ -40,11 +41,12 @@ function playGame(){
     let rightAnswers = 0;
 
     document.getElementById('start-btn').style.visibility = 'hidden';
+    document.getElementById('check-btn').style.visibility = 'visible';
 
     setRandomTiles();
 
     document.body.addEventListener('click', function (evt) {
-        if(evt.target.id != 'start-btn'){
+        if(evt.target.className != 'start-btn' && evt.target.id != 'check-btn' ){
             let whichTileClicked = evt.target.id;
             let tileNumber = whichTileClicked.split('-')
             let index = parseInt(tileNumber[1]);
