@@ -64,7 +64,7 @@ input{
     background-color: #191B10;
     margin: auto;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     padding:5px;
     column-gap: 5px;
     row-gap: 5px;

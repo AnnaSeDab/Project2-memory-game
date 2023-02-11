@@ -1,7 +1,7 @@
 /*disable printscreen posibility*/
 
 let level = 0;
-let gridSize = 4;
+let gridSize = 24;
 let squaresLight = 2;
 let score = 0;
 let lives = 3;
@@ -11,6 +11,8 @@ let tilesPickedIndex = [];
 let addToGrid = 3;
 let numberOfColumns = "auto auto";
 let gameContainer;
+let maxSquares = 4;
+let arr = [];
 
 /*listener on loading the page
 
@@ -35,29 +37,7 @@ playButton.addEventListener("click", playGame);
 
 function playGame(){
 
-    if (level === 0 || level%3 === 0){
-    addToGrid = addToGrid + 2;
-    gridSize = gridSize + addToGrid;
-    numberOfColumns =  numberOfColumns.concat(" auto");
-    document.getElementById('game-container').style.gridTemplateColumns = numberOfColumns;
-    }
-
-    const tileIndex = Math.floor(Math.random() * (gridSize + 1));
-
-    let gameContainer = document.getElementById("game-container");
-    gameContainer.innerHTML = '';
-    for (var i=0; i<gridSize; i++){
-        gameContainer.innerHTML = gameContainer.innerHTML + " <div class='grid-item'></div>";
-    }
-
-    if (squaresLight < gridSize){
-        squaresLight++
-        assignLitTiles(tileIndex);   
-    }
-
-    setTimeout(timeOut, 1000);
-
-    document.getElementById('start-btn').style.visibility = 'hidden';
+    setRandomTiles();
 
     document.getElementById("right").addEventListener("click",function rightAnswer() {
         document.getElementById('start-btn').style.visibility = 'visible';
@@ -80,19 +60,46 @@ function playGame(){
     }, false);
 } 
 
-function assignLitTiles(i){   
-        let allTiles = document.getElementsByClassName("grid-item");
-        allTiles[i].classList.toggle("lit-tile");
-        allTiles[i].id = "right";
-        for (let f of allTiles){
-            f.classList.add("wrong");
+function setRandomTiles() {
+	playButton.disabled = true;
+  if (arr.length == 8 || maxSquares == 9) {
+    console.log('Game is over');
+    return;
+  }
+  // Clear array before you start putting indexes in there, because it may have indexes from previous loop
+  arr = [];
+  let counter = 0;
+  while (counter < maxSquares) {
+    let boxIndex = getRandomBox();
+    arr.push(boxIndex);
+    console.log(`Add this to arrays: ${boxIndex}, and the array now contains: ${arr}`)
+    let boxElement = document.getElementById(`tile${boxIndex}`);
+    boxElement.className = "lit-tile";
+    setTimeout(() => {
+      for (let y = 0; y < arr.length + 1; y++) {
+        let classBox = document.getElementById(`tile${arr[y]}`);
+        if (classBox && classBox.classList.contains("lit-tile")) {
+          classBox.className = "grid-item"
+          button.disabled = false;
         }
+      }
+    }, 3000)
+    counter++;
+  }
+  maxSquares++
+  console.log(`Max squares: ${maxSquares}`)
 }
 
-function timeOut(){
-    let litTile = document.getElementsByClassName("lit-tile");
-    litTile[0].classList = "grid-item";
-}
+function getRandomBox() {
+    const allClassBoxes = document.getElementsByClassName("lit-tile");
+    console.log(`All class length inside get random: ${allClassBoxes.length}`);
+    let randNum = Math.floor(Math.random() * (gridSize + 1));
+    console.log(`Rand num: ${randNum}`)
+    if (arr.includes(randNum)) {
+      return getRandomBox();
+    }
+    return randNum
+  }
 
 function looseLife() {
     if (lives === 3) {
