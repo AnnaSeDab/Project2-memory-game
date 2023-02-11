@@ -105,6 +105,9 @@ function checkAnswer(){
     let indexAsNumber = parseInt(indexOfPicked[1]);
     arrPicked.push(indexAsNumber);
   }
+  arr.sort(function(a, b) {
+    return a - b;
+  });
 }
 
 function looseLife() {
