@@ -13,7 +13,7 @@ let numberOfColumns = "auto auto";
 let gameContainer;
 let maxSquares = 4;
 let arr = [];
-
+let arrPicked = [];
 /*listener on loading the page
 
 set how many squares to light up
@@ -42,21 +42,12 @@ function playGame(){
     setRandomTiles();
 
     document.body.addEventListener('click', function (evt) {
-        let whichTileClicked = evt.target.id;
-        let tileNumber = whichTileClicked.split('-')
-        let index = parseInt(tileNumber[1]);
-        if (typeof index === 'number'){console.log("arr.includes(index)");}
-        if (arr.includes(index)){
-            rightAnswers++;
-            console.log("right");
-            document.getElementById(whichTileClicked).classList.toggle("lit-tile")
-        }
+        if(evt.target.id != 'start-btn'){
+            let whichTileClicked = evt.target.id;
+            let tileNumber = whichTileClicked.split('-')
+            let index = parseInt(tileNumber[1]);
+            document.getElementById(whichTileClicked).classList.toggle("lit-tile")} 
     }, false);
-
-
-    /* basically copypasted so credit https://stackoverflow.com/questions/19655189/javascript-click-event-listener-on-class*/
-
-    
 } 
 
 function setRandomTiles() {
