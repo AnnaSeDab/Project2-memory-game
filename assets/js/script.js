@@ -60,6 +60,7 @@ function playGame(){
 
     document.getElementById("right").addEventListener("click",function rightAnswer() {
         alert("Hello world!");
+        document.getElementById('start-btn').style.visibility = 'visible';
     });
 
 
@@ -67,7 +68,8 @@ function playGame(){
 
     document.body.addEventListener('click', function (evt) {
         if (evt.target.classList.contains('wrong')) {
-            alert("wrong!");
+            looseLife();
+            document.getElementById('start-btn').style.visibility = 'visible';
         }
     }, false);
 } 
