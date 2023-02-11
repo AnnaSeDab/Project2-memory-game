@@ -108,9 +108,14 @@ function checkAnswer(){
     return a - b;
   });
   if(arrayEquals(arr, arrPicked)){
-    console.log("yes");
+    score++;
+    level++;
+    let currentScore = document.getElementById("score-no");
+    currentScore.innerHTML = score;
+    alert("Good Job! Correct answer!")
   } else {
-    console.log("nope");
+    alert("Wrong answer!")
+    looseLife()
   }
 }
 
