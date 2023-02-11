@@ -61,12 +61,17 @@ function playGame(){
     document.getElementById("right").addEventListener("click",function rightAnswer() {
         alert("Hello world!");
     });
+
+
 } 
 
 function assignLitTiles(i){   
         let allTiles = document.getElementsByClassName("grid-item");
         allTiles[i].classList.toggle("lit-tile");
         allTiles[i].id = "right";
+        for (let f of allTiles){
+            f.classList.add("wrong");
+        }
 }
 
 function timeOut(){
