@@ -32,9 +32,12 @@ pick tiles to light up */
         hide squares*/
         
 let playButton = document.getElementById("start-btn");
-document.getElementById('check-btn').style.visibility = 'hidden';
-
 playButton.addEventListener("click", playGame);
+
+let checkButton = document.getElementById('check-btn');
+checkButton.style.visibility = 'hidden';
+checkButton.addEventListener("click", checkAnswer);
+
 
 function playGame(){
     
@@ -46,7 +49,7 @@ function playGame(){
     setRandomTiles();
 
     document.body.addEventListener('click', function (evt) {
-        if(evt.target.className != 'start-btn' && evt.target.id != 'check-btn' ){
+        if(evt.target.id != 'start-btn' && evt.target.id != 'check-btn' ){
             let whichTileClicked = evt.target.id;
             let tileNumber = whichTileClicked.split('-')
             let index = parseInt(tileNumber[1]);
@@ -94,6 +97,17 @@ function getRandomBox() {
     }
     return randNum
   }
+  
+function checkAnswer(){
+    let pickedTiles =  document.getElementsByClassName("lit-tile")
+    console.log(pickedTiles);
+    for (let i = 0; i < pickedTiles.length; i++) {
+        let idOfPicked = pickedTiles[i].id;
+        let indexOfPicked = idOfPicked.split("-");
+        let indexAsNumber = parseInt(indexOfPicked[1]);
+        arrPicked.push(indexAsNumber);
+    }
+}
 
 function looseLife() {
     if (lives === 3) {
