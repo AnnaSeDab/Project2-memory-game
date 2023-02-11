@@ -88,9 +88,17 @@ function timeOut(){
     litTile[0].classList = "grid-item";
 }
 
-
 function looseLife() {
-    
+    if (lives === 3) {
+        document.getElementById('star-one').style.visibility = 'hidden';
+        lives = lives - 1;
+    } else if (lives === 2) {
+        document.getElementById('star-two').style.visibility = 'hidden';
+        lives = lives - 1;
+    } else if (lives === 1) {
+        document.getElementById('star-three').style.visibility = 'hidden';
+        alert("You lost!");
+    }
 }
 
 /*listener click on tile
