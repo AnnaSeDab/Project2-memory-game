@@ -36,28 +36,27 @@ let playButton = document.getElementById("start-btn");
 playButton.addEventListener("click", playGame);
 
 function playGame(){
+    
+    let rightAnswers = 0;
 
     setRandomTiles();
 
-    document.getElementById("right").addEventListener("click",function rightAnswer() {
-        document.getElementById('start-btn').style.visibility = 'visible';
-        level++;
-        score++;
-        let currentScore = document.getElementById("score-no");
-        currentScore.innerHTML = score;
-        console.log(score);
-        console.log(lives);
-    });
+    document.body.addEventListener('click', function (evt) {
+        let whichTileClicked = evt.target.id;
+        let tileNumber = whichTileClicked.split('-')
+        let index = parseInt(tileNumber[1]);
+        if (typeof index === 'number'){console.log("arr.includes(index)");}
+        if (arr.includes(index)){
+            rightAnswers++;
+            console.log("right");
+            document.getElementById(whichTileClicked).classList.toggle("lit-tile")
+        }
+    }, false);
 
 
     /* basically copypasted so credit https://stackoverflow.com/questions/19655189/javascript-click-event-listener-on-class*/
 
-    document.body.addEventListener('click', function (evt) {
-        if (evt.target.classList.contains('wrong')) {
-            looseLife();
-            document.getElementById('start-btn').style.visibility = 'visible';
-        }
-    }, false);
+    
 } 
 
 function setRandomTiles() {
@@ -73,14 +72,14 @@ function setRandomTiles() {
     let boxIndex = getRandomBox();
     arr.push(boxIndex);
     console.log(`Add this to arrays: ${boxIndex}, and the array now contains: ${arr}`)
-    let boxElement = document.getElementById(`tile${boxIndex}`);
+    let boxElement = document.getElementById(`tile-${boxIndex}`);
     boxElement.className = "lit-tile";
     setTimeout(() => {
       for (let y = 0; y < arr.length + 1; y++) {
-        let classBox = document.getElementById(`tile${arr[y]}`);
+        let classBox = document.getElementById(`tile-${arr[y]}`);
         if (classBox && classBox.classList.contains("lit-tile")) {
           classBox.className = "grid-item"
-          button.disabled = false;
+          playButton.disabled = false;
         }
       }
     }, 3000)
