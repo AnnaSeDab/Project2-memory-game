@@ -37,6 +37,8 @@ function playGame(){
     addToGrid = addToGrid + 2;
     gridSize = gridSize + addToGrid;
 
+    let tileIndex = Math.floor(Math.random() * (gridSize + 1));
+
     numberOfColumns =  numberOfColumns.concat(" auto");
     document.getElementById('game-container').style.gridTemplateColumns = numberOfColumns;
 
@@ -49,29 +51,29 @@ function playGame(){
 
     if (squaresLight < gridSize){
         squaresLight++
-        assignLitTiles();   
-    };  
+        assignLitTiles(tileIndex);   
+    }
 
     setTimeout(timeOut, 1000);
 
     document.getElementById('start-btn').style.visibility = 'hidden';
+
+    document.getElementById("right").addEventListener("click",function rightAnswer() {
+        alert("Hello world!");
+    });
 } 
 
-
-function assignLitTiles(){   
-        let tileIndex = Math.floor(Math.random() * (gridSize + 1));
+function assignLitTiles(i){   
         let allTiles = document.getElementsByClassName("grid-item");
-            allTiles[tileIndex].classList.toggle("lit-tile");
+        allTiles[i].classList.toggle("lit-tile");
+        allTiles[i].id = "right";
 }
 
 function timeOut(){
-    let gameContainer = document.getElementById("game-container");
-    gameContainer.innerHTML = '';
-    for (var i=0; i<gridSize; i++){
-        gameContainer.innerHTML = gameContainer.innerHTML + " <div class='grid-item'></div>";
-    }
+    let litTile = document.getElementsByClassName("lit-tile");
+    litTile[0].classList = "grid-item";
 }
-    
+
 
 
 
