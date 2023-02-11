@@ -42,7 +42,7 @@ function playGame(){
     document.getElementById('game-container').style.gridTemplateColumns = numberOfColumns;
     }
 
-    let tileIndex = Math.floor(Math.random() * (gridSize + 1));
+    const tileIndex = Math.floor(Math.random() * (gridSize + 1));
 
     let gameContainer = document.getElementById("game-container");
     gameContainer.innerHTML = '';
@@ -60,9 +60,13 @@ function playGame(){
     document.getElementById('start-btn').style.visibility = 'hidden';
 
     document.getElementById("right").addEventListener("click",function rightAnswer() {
-        alert("Hello world!");
         document.getElementById('start-btn').style.visibility = 'visible';
         level++;
+        score++;
+        let currentScore = document.getElementById("score-no");
+        currentScore.innerHTML = score;
+        console.log(score);
+        console.log(lives);
     });
 
 
