@@ -97,8 +97,7 @@ function getRandomBox() {
   }
   
 function checkAnswer(){
-  let pickedTiles =  document.getElementsByClassName("lit-tile")
-  console.log(pickedTiles);
+  let pickedTiles =  document.getElementsByClassName("lit-tile");
   for (let i = 0; i < pickedTiles.length; i++) {
     let idOfPicked = pickedTiles[i].id;
     let indexOfPicked = idOfPicked.split("-");
@@ -108,7 +107,20 @@ function checkAnswer(){
   arr.sort(function(a, b) {
     return a - b;
   });
+  if(arrayEquals(arr, arrPicked)){
+    console.log("yes");
+  } else {
+    console.log("nope");
+  }
 }
+
+function arrayEquals(a, b) {
+  return Array.isArray(a) &&
+      Array.isArray(b) &&
+      a.length === b.length &&
+      a.every((val, index) => val === b[index]);
+}
+
 
 function looseLife() {
     if (lives === 3) {
