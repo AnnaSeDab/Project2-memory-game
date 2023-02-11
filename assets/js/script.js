@@ -49,10 +49,8 @@ function playGame(){
     setRandomTiles();
 
     document.body.addEventListener('click', function (evt) {
-        if(evt.target.id != 'start-btn' && evt.target.id != 'check-btn' ){
+        if(evt.target.classList.contains("pickable")){
             let whichTileClicked = evt.target.id;
-            let tileNumber = whichTileClicked.split('-')
-            let index = parseInt(tileNumber[1]);
             document.getElementById(whichTileClicked).classList.toggle("lit-tile")} 
     }, false);
 } 
@@ -76,7 +74,7 @@ function setRandomTiles() {
       for (let y = 0; y < arr.length + 1; y++) {
         let classBox = document.getElementById(`tile-${arr[y]}`);
         if (classBox && classBox.classList.contains("lit-tile")) {
-          classBox.className = "grid-item"
+          classBox.className = "grid-item pickable"
           playButton.disabled = false;
         }
       }
@@ -99,14 +97,14 @@ function getRandomBox() {
   }
   
 function checkAnswer(){
-    let pickedTiles =  document.getElementsByClassName("lit-tile")
-    console.log(pickedTiles);
-    for (let i = 0; i < pickedTiles.length; i++) {
-        let idOfPicked = pickedTiles[i].id;
-        let indexOfPicked = idOfPicked.split("-");
-        let indexAsNumber = parseInt(indexOfPicked[1]);
-        arrPicked.push(indexAsNumber);
-    }
+  let pickedTiles =  document.getElementsByClassName("lit-tile")
+  console.log(pickedTiles);
+  for (let i = 0; i < pickedTiles.length; i++) {
+    let idOfPicked = pickedTiles[i].id;
+    let indexOfPicked = idOfPicked.split("-");
+    let indexAsNumber = parseInt(indexOfPicked[1]);
+    arrPicked.push(indexAsNumber);
+  }
 }
 
 function looseLife() {
