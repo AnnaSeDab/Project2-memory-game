@@ -119,6 +119,8 @@ function checkAnswer(){
   }
   document.getElementById('start-btn').style.visibility = 'visible';
   document.getElementById('check-btn').style.visibility = 'hidden';
+
+  resetGrid();
 }
 
 function arrayEquals(a, b) {
@@ -140,6 +142,15 @@ function looseLife() {
         document.getElementById('star-three').style.visibility = 'hidden';
         alert("You lost!");
     }
+}
+
+function resetGrid(){
+  for (let y = 0; y < arr.length + 1; y++) {
+    let classBox = document.getElementById(`tile-${arr[y]}`);
+    if (classBox && classBox.classList.contains("lit-tile")) {
+      classBox.className = "grid-item pickable"
+    }
+  }
 }
 
 /*listener click on tile
