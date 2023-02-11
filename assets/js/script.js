@@ -89,7 +89,9 @@ function timeOut(){
 }
 
 
-
+function looseLife() {
+    
+}
 
 /*listener click on tile
 check if tile clicked is right
