@@ -51,7 +51,7 @@ function playGame(){
     document.body.addEventListener('click', function (evt) {
         if(evt.target.classList.contains("pickable")){
             let whichTileClicked = evt.target.id;
-            document.getElementById(whichTileClicked).classList.toggle("lit-tile")} 
+            document.getElementById(whichTileClicked).classList.add("lit-tile")} 
     }, false);
 } 
 
@@ -63,6 +63,7 @@ function setRandomTiles() {
   }
   // Clear array before you start putting indexes in there, because it may have indexes from previous loop
   arr = [];
+  arrPicked = [];
   let counter = 0;
   while (counter < maxSquares) {
     let boxIndex = getRandomBox();
@@ -115,8 +116,9 @@ function checkAnswer(){
     alert("Good Job! Correct answer!")
   } else {
     alert("Wrong answer!")
-    looseLife()
+    looseLife();
   }
+  
   document.getElementById('start-btn').style.visibility = 'visible';
   document.getElementById('check-btn').style.visibility = 'hidden';
 
