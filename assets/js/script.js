@@ -117,6 +117,8 @@ function checkAnswer(){
     alert("Wrong answer!")
     looseLife()
   }
+  document.getElementById('start-btn').style.visibility = 'visible';
+  document.getElementById('check-btn').style.visibility = 'hidden';
 }
 
 function arrayEquals(a, b) {
