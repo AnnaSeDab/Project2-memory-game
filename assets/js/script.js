@@ -39,6 +39,8 @@ function playGame(){
     
     let rightAnswers = 0;
 
+    document.getElementById('start-btn').style.visibility = 'hidden';
+
     setRandomTiles();
 
     document.body.addEventListener('click', function (evt) {
