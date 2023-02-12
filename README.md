@@ -140,11 +140,12 @@ Game was won to see if appropriate message shows and game can be reset.
 
 ## Fixed bugs
 
+After first round tiles remained responsive and could be clicked at any point as function resetting the grid was placed in the wrong place. Function was then moved and called straight after checking the answer.
 
----
- 
-## Unfixed bugs
- 
+Code checking if the last level was played and game won was placed in a wrong place which ment that game could be won even if on the last level the answer was wrong. If statement checking if ast level was reached was moved.
+
+Function picking tiles to lit was not picking right number of tiles. The code was constructed from scratch with the help of explenation and example given by my mentor Mitko Bachvarov.
+
 ---
 
 ## Responsiveness
