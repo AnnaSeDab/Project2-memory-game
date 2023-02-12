@@ -16,6 +16,7 @@ checkButton.style.backgroundColor = "grey";
 checkButton.disabled = true;
 checkButton.addEventListener("click", checkAnswer);
 
+let allElements = document.getElementById("game-container");
 
 function playGame() {
 
@@ -29,13 +30,6 @@ function playGame() {
     if (level > 1) {
         setMonkeyTile();
     }
-
-    document.body.addEventListener('click', function(evt) {
-        if (evt.target.classList.contains("pickable")) {
-            let whichTileClicked = evt.target.id;
-            document.getElementById(whichTileClicked).classList.add("lit-tile")
-        }
-    }, false);
 }
 
 function setRandomTiles() {
@@ -63,10 +57,18 @@ function setRandomTiles() {
                 }
                 checkButton.disabled = false;
                 checkButton.style.backgroundColor = "#191B10";
+                document.body.addEventListener('click', function(evt) {
+                  if (evt.target.classList.contains("pickable")) {
+                      let whichTileClicked = evt.target.id;
+                      document.getElementById(whichTileClicked).classList.add("lit-tile")
+                  }
+              }, false);
             }
         }, 3000)
         counter++;
     }
+
+
 
     maxSquares++
     console.log(`Max squares: ${maxSquares}`)
