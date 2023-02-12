@@ -31,18 +31,22 @@ Both pages allow for a noncommercial use of the images.
  
 ### Icons
 
-Icons used to show remaining lives are imported from Font Awesome using a link placed in the head of each html page.
+Icons used to show remaining lives are imported from Font Awesome using a link placed in the head of html page.
 
 ---
  
 ## Wireframes
- 
- 
+
+Wireframes were creatied using Canva online graphic design tool. 
+
 ### Desktop
  
- 
+
+![Picture of wireframe for desktop devices](assets/images/wireframe-desktop.png) 
+
 ### Mobile
- 
+
+![Picture of wireframe for mobile devices](assets/images/wireframe-mobile.png) 
  
 ---
 
