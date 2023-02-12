@@ -154,14 +154,36 @@ Function picking tiles to lit was not picking right number of tiles. The code wa
 
 ## Deployment
 
+- Logg to the Github website
+- Select **Project2-memory-game** repository
+- Select **Settings** from the navigation bar
+- Select **Pages** from the menu on the left
+- Pick source **Deploy from branch**
+- Pick branch **main**
+- Click save button
+- Link to the website appeares at the top of the page
 
 ---
 
 ## Cloning the Github repository
 
+- Logg in to the Github
+- Select **Project2-memory-game** repository
+- Click on the **Code** button located next to the green Gitpod button
+- Copy link form the HTTPS section
+- Open terminal
+- Change the current working directory to the location where you want the cloned directory
+- Type "git clone" and the previously copier URL
+- Press **Enter** 
+
 ---
 
 ## Forking the Github repository
+
+- Logg in to the Github
+- Select **Project2-memory-game** repository
+- Click on the **Fork** button located on the right top section of the page
+- The copy of oryginal repository is made into your Github account
 
 
 ---
