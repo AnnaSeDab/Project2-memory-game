@@ -12,11 +12,26 @@
     <title>Memory game</title>
 </head>
 <body>
-
-    <!-- start button -->
+    <div class="flex-container">
+    <!-- score container -->
     <div>
-    <button class="button" id="start-btn" type="button">Play</button>
-    <button class="button" id="check-btn" type="button">Check answer</button>
+        <div class="score-flexbox short-screen">
+            <div class="score-container">
+                <p class="score">Your score: </p>
+                <p class="score" id="score-no">0</p>
+            </div>
+            <div class="lives-container">
+                <i class="fa-solid fa-star star" id="star-one"></i>
+                <i class="fa-solid fa-star star" id="star-two"></i>
+                <i class="fa-solid fa-star star" id="star-three"></i>
+            </div>
+         </div>
+
+    <!-- start button -->     
+         <div>
+            <button class="button" id="start-btn" type="button">Play</button>
+            <button class="button" id="check-btn" type="button">Check answer</button>
+        </div>        
     </div>
 
     <!-- game container -->
@@ -97,19 +112,7 @@
         
         </div>
     </div>
-
-     <!-- score container -->
-     <div class="score-flexbox">
-        <div class="score-container">
-            <p class="score">Your score: </p>
-            <p class="score" id="score-no">0</p>
-        </div>
-        <div class="lives-container">
-            <i class="fa-solid fa-star star" id="star-one"></i>
-            <i class="fa-solid fa-star star" id="star-two"></i>
-            <i class="fa-solid fa-star star" id="star-three"></i>
-        </div>
-     </div>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
