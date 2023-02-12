@@ -113,3 +113,7 @@ input{
 .lit-tile{
     background-color:goldenrod;
 }
+
+.monkey-tile{
+    background-color:red;
+}

@@ -48,6 +48,10 @@ function playGame(){
 
     setRandomTiles();
 
+    if (level > 3){
+      setMonkeyTile();
+    }
+
     document.body.addEventListener('click', function (evt) {
         if(evt.target.classList.contains("pickable")){
             let whichTileClicked = evt.target.id;
@@ -57,11 +61,12 @@ function playGame(){
 
 function setRandomTiles() {
 	playButton.disabled = true;
-  if (arr.length == 8 || maxSquares == 9) {
+
+  if (level === 20) {
     console.log('Game is over');
     return;
   }
-  // Clear array before you start putting indexes in there, because it may have indexes from previous loop
+
   arr = [];
   arrPicked = [];
   let counter = 0;
@@ -82,8 +87,19 @@ function setRandomTiles() {
     }, 3000)
     counter++;
   }
+
   maxSquares++
   console.log(`Max squares: ${maxSquares}`)
+}
+
+function setMonkeyTile(){
+    let monkeyTileIndex = getRandomBox();
+    console.log(`monkey index: ${monkeyTileIndex}`)
+    let monkey = document.getElementById(`tile-${monkeyTileIndex}`);
+    monkey.className = "monkey-tile";
+    setTimeout(() => {
+        monkey.className = "grid-item pickable"
+    }, 1000)
 }
 
 function getRandomBox() {
@@ -111,6 +127,7 @@ function checkAnswer(){
   if(arrayEquals(arr, arrPicked)){
     score++;
     level++;
+    console.log(`current level: ${level}`);
     let currentScore = document.getElementById("score-no");
     currentScore.innerHTML = score;
     alert("Good Job! Correct answer!")
