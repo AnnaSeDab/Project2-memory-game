@@ -190,9 +190,11 @@ Function picking tiles to lit was not picking right number of tiles. The code wa
 
 ## Credits
 
+Code was written by me with help of explenations found on W3Schools and Stack overflow.
+Function picking tiles to lit was constructed thanks to explenation and example given by my mentor Mitko Bachvarov.
 
 ---
 
 ## Acknowledgements
 
-
+Huge thank you to my mentor Mitko Bachvarov for guiding me through the project and helping me understand the code I need to write in order for the game to work.
