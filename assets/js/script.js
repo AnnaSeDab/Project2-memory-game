@@ -51,8 +51,8 @@ function setRandomTiles() {
 
                 classBox.className = "grid-item pickable";
 
-                checkButton.disabled = false;
-                checkButton.style.backgroundColor = "#191B10";
+                document.getElementById('check-btn').disabled = false;
+                document.getElementById('check-btn').style.backgroundColor = "#191B10";
 
                 document.body.addEventListener('click', function(evt) {
                     if (evt.target.classList.contains("pickable")) {
