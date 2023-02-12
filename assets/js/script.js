@@ -1,8 +1,6 @@
 let gridSize = 24;
 let score = 0;
 let lives = 3;
-let tilesClicked = 0;
-let userName;
 let maxSquares = 4;
 let arr = [];
 let arrPicked = [];
@@ -14,8 +12,6 @@ let checkButton = document.getElementById('check-btn');
 checkButton.style.backgroundColor = "grey";
 checkButton.disabled = true;
 checkButton.addEventListener("click", checkAnswer);
-
-let gameContainer = document.getElementById("game-container");
 
 let currentScore = document.getElementById("score-no");
 
@@ -61,11 +57,11 @@ function setRandomTiles() {
                 document.body.addEventListener('click', function(evt) {
                     if (evt.target.classList.contains("pickable")) {
                         let whichTileClicked = evt.target.id;
-                        document.getElementById(whichTileClicked).classList.add("lit-tile")
+                        document.getElementById(whichTileClicked).classList.add("lit-tile");
                     }
                 }, false);
             }
-        }, 2000)
+        }, 2000);
         counter++;
     }
 }
@@ -77,16 +73,15 @@ function setMonkeyTile() {
     setTimeout
         (() => {
             monkey.className = "grid-item pickable";
-        }, 2000)
+        }, 2000);
 }
 
 function getRandomBox() {
-    const allClassBoxes = document.getElementsByClassName("lit-tile");
     let randNum = Math.floor(Math.random() * (gridSize + 1));
     if (arr.includes(randNum)) {
         return getRandomBox();
     }
-    return randNum
+    return randNum;
 }
 
 function checkAnswer() {
@@ -114,7 +109,7 @@ function checkAnswer() {
         score++;
         currentScore.innerHTML = score;
         checkButton.innerHTML = "That's right!";
-        maxSquares++  
+        maxSquares++; 
     } else {
         checkButton.innerHTML = "Wrong answer!";
         looseLife();
@@ -163,6 +158,6 @@ function playAgain(){
 function resetGrid() {
     for (let y = 0; y < 25; y++) {
         let classBox = document.getElementById(`tile-${y}`);
-        classBox.className = "grid-item"
+        classBox.className = "grid-item";
     }
 }
