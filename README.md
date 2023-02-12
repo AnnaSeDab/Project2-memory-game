@@ -150,6 +150,20 @@ Function picking tiles to lit was not picking right number of tiles. The code wa
 
 ## Responsiveness
 
+Flex boxes and grid are used in order to make the site responsive.
+Upon completing website was tested on following browsers and devices:
+
+Upon completing website was tested on following browsers and devices:
+ 
+- Desktop browsers:
+   - Firefox
+   - Chromium
+   - Chrome
+- Mobile devices:
+   - Galaxy S7
+   - Huawei ELE-L29
+
+also in Firefox developer tools on different screen sizes.
 ---
 
 ## Deployment
