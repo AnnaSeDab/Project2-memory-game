@@ -105,17 +105,37 @@ On wider screens two sections are placed side by side.
 
 ## Testing
 
+Code went through validators without bigger problems. 
+Java Script validator showed some missed semicolons and minor problem that might occur with varable within function which was easly fixed.
 
 ### HTML Validatior
 
+Main page
+![Screenshot of HTML validator results](assets/images/HTMLvalidator.png)
+Game page
+![Screenshot of HTML validator results](assets/images/HTMLvalidatorgamepage.png)
 
 ### CSS Validator
 
+![Screenshot of CSS validator results](assets/images/CSSvalidator.png)
+
 ### Java Script validator - JSHint
 
+![Screenshot of JavaScript validator results](assets/images/JavaScriptvalidator.png)
 
 ### Manual tests
  
+Throughout the creation gamee was tested to check if it is working as intended.
+Variables were checked via colsole logs to see if the functions work correctly.
+Play and Check buttons were clicked at various stages of the game to check if the behave as expected (disabled and enabled when they should be). 
+Tiles were clicked at all the stages of game to check if the are responsive only when player is ment to answer and the are not responsive at any other stage of the game. 
+Correct answer was provided to check if score and number of tiles increases as expected.
+Wrong answer was provided to check if score and lives are deducted while number of tiles stays the same.
+Mixture of correct and wrong answers were given throughout the game to see if eache time response is as it should be.
+Monkey tile was selected to see if it causes answer to be wrong even if all the other tiles picked were correct.
+Game was lost to see if appropriate message shows and game can be reset.
+Game was won to see if appropriate message shows and game can be reset.
+
 ---
 
 ## Fixed bugs
