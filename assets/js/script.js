@@ -65,7 +65,7 @@ function setRandomTiles() {
                     }
                 }, false);
             }
-        }, 1000)
+        }, 2000)
         counter++;
     }
 }
@@ -77,7 +77,7 @@ function setMonkeyTile() {
     setTimeout
         (() => {
             monkey.className = "grid-item pickable";
-        }, 3000)
+        }, 2000)
 }
 
 function getRandomBox() {
