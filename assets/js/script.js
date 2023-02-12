@@ -12,7 +12,8 @@ let playButton = document.getElementById("start-btn");
 playButton.addEventListener("click", playGame);
 
 let checkButton = document.getElementById('check-btn');
-checkButton.style.visibility = 'hidden';
+checkButton.style.backgroundColor = "grey";
+checkButton.disabled = true;
 checkButton.addEventListener("click", checkAnswer);
 
 
@@ -20,8 +21,8 @@ function playGame() {
 
     document.getElementById('start-btn').innerHTML = 'Next';
 
-    document.getElementById('start-btn').style.visibility = 'hidden';
-    document.getElementById('check-btn').style.visibility = 'visible';
+    playButton.disabled = true;
+    playButton.style.backgroundColor = "grey";
 
     setRandomTiles();
 
@@ -59,8 +60,9 @@ function setRandomTiles() {
                 let classBox = document.getElementById(`tile-${arr[y]}`);
                 if (classBox && classBox.classList.contains("lit-tile")) {
                     classBox.className = "grid-item pickable";
-                    playButton.disabled = false;
                 }
+                checkButton.disabled = false;
+                checkButton.style.backgroundColor = "#191B10";
             }
         }, 3000)
         counter++;
@@ -114,9 +116,10 @@ function checkAnswer() {
         alert("Wrong answer!")
         looseLife();
     }
-
-    document.getElementById('start-btn').style.visibility = 'visible';
-    document.getElementById('check-btn').style.visibility = 'hidden';
+    checkButton.disabled = true;
+    checkButton.style.backgroundColor = "grey";
+    playButton.disabled = false;
+    playButton.style.backgroundColor = "#191B10";
 
     resetGrid();
 }
