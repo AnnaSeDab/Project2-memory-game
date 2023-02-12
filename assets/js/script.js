@@ -42,7 +42,7 @@ function playGame() {
 }
 
 /* function disables play button
-lghts up tiles but seleting random number which is then checked with part of the tile's id
+lghts up tiles by seleting random number which is then checked with part of the tile's id
 until it reaches number of tiles needed for the level
 time out function turns off the tiles, enables check button and clicking on tiles
 */
@@ -89,7 +89,7 @@ function setMonkeyTile() {
 		}, 2000);
 }
 
-/**function picks a random number and checks against arr array*/
+/**function picks a random number and checks against arr array to make sure tiles are unique*/
 function getRandomBox() {
 	let randNum = Math.floor(Math.random() * (25));
 	if (arr.includes(randNum)) {
@@ -98,39 +98,30 @@ function getRandomBox() {
 	return randNum;
 }
 
-/**function checks if the last level was won
- * if yes it modifies buttons and activates functions: 
- * playAgain(resseting variables) resetGrid(resetting the grid)
- * if not 
+/**function checks if answer is correct by reading picked tiles creating arrPicked and comparing it with arr(array of correct answers)
+ * if answer correct then checks if that was the last level if so activates gameWon function if not activates levelWon function
+ * if answer not correct activates function looseLife
+ * either way it updates buttons and resets grid with resetGrid function
  */
 function checkAnswer() {
-	if (maxSquares === 15) {
-		checkButton.innerHTML = `You won! Your score is:  ${score}`;
-		playButton.innerHTML = "Play again";
-		playButton.style.backgroundColor = "#191B10";
-		playButton.disabled = false;
-		checkButton.disabled = true;
-		playAgain();
-		resetGrid();
-	} else {
-    arrPicked = [];
-		let pickedTiles = document.getElementsByClassName("lit-tile");
-		for (let i = 0; i < pickedTiles.length; i++) {
-			let idOfPicked = pickedTiles[i].id;
-			let indexOfPicked = idOfPicked.split("-");
-			let indexAsNumber = parseInt(indexOfPicked[1]);
-			arrPicked.push(indexAsNumber);
+	arrPicked = [];
+	let pickedTiles = document.getElementsByClassName("lit-tile");
+	for (let i = 0; i < pickedTiles.length; i++) {
+		let idOfPicked = pickedTiles[i].id;
+		let indexOfPicked = idOfPicked.split("-");
+		let indexAsNumber = parseInt(indexOfPicked[1]);
+		arrPicked.push(indexAsNumber);
 		}
 		arr.sort(function(a, b) {
 			return a - b;
 		});
 		if (arrayEquals(arr, arrPicked)) {
-			score++;
-			currentScore.innerHTML = score;
-			checkButton.innerHTML = "That's right!";
-			maxSquares++;
+			if (maxSquares === 15){
+				gameWon();
+			}else{
+				levelWon();
+			}
 		} else {
-			checkButton.innerHTML = "Wrong answer!";
 			looseLife();
 		}
 		checkButton.disabled = true;
@@ -139,7 +130,23 @@ function checkAnswer() {
 		playButton.style.backgroundColor = "#191B10";
 
 		resetGrid();
-	}
+}
+
+function gameWon(){
+	checkButton.innerHTML = `You won! Your score is:  ${score}`;
+	playButton.innerHTML = "Play again";
+	playButton.style.backgroundColor = "#191B10";
+	playButton.disabled = false;
+	checkButton.disabled = true;
+	playAgain();
+	resetGrid();
+}
+
+function levelWon(){
+	score++;
+	currentScore.innerHTML = score;
+	checkButton.innerHTML = "That's right!";
+	maxSquares++;
 }
 
 function arrayEquals(a, b) {
@@ -150,6 +157,7 @@ function arrayEquals(a, b) {
 }
 
 function looseLife() {
+	checkButton.innerHTML = "Wrong answer!";
 	if (lives === 3) {
 		document.getElementById('star-one').style.visibility = 'hidden';
 		lives = lives - 1;
