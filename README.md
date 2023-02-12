@@ -80,6 +80,27 @@ On wider screens two sections are placed side by side.
 
 ## Resources used
 
+- Font awesome - importing star icons representing lives
+- W3Schools - used to find solutions to problems with code
+- Stack overflow - used to find solutions to problems with code
+- Firefox developer tools - checking responsiveness and observing effect of code changes in real time
+- Slack - used to find the solutions for the encountered problems with code
+- Canva - used for creating wireframes
+- Github - used as a repository and to host the deployed website
+- Gitpod - used to build and develop the website
+- Code Institute - used to review concepts covered in the coursep
+- W3C CSS Validation Service - used to validate the CSS file
+- W3C HTML Validation Service - used to validate the HTML files
+- JSHint - used to validate the JavaScript files
+- https://codebeautify.org/jsviewer - used to beautife java script
+- https://beautifier.io/ - used to beautify CSS and HTML code
+- Coolors - used to create colour palette
+- Am I responsive - used to create mock up image of ho the website will look on different screen sizes
+- Gimp - used for resizing and adding background to the monkey picture
+- Pixabay used to download background image
+- Irasutoya used to dwonload picture of the monkey
+
+
 ---
 
 ## Testing
@@ -90,7 +111,7 @@ On wider screens two sections are placed side by side.
 
 ### CSS Validator
 
-### Java Script validator
+### Java Script validator - JSHint
 
 
 ### Manual tests
