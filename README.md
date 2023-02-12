@@ -54,8 +54,18 @@ Wireframes were creatied using Canva online graphic design tool.
 
 ### Features on index.html
 
+The main page is very simple. It contains header with the name of the game, instructions and the play button which takes us to the game page.
 
 ### Features on gamepage.html
+
+Game page is set up as flex box with two setions:
+
+1) Score and Lives (in a form of stars) which update accordingly whe players answer is correct or incorrect. 
+Play and Check answer button. Depending on the stage of the game buttons can be disabled or their inner html changes. 
+
+2) Game area set up in grid.
+
+On wider screens two sections are placed side by side.
 
 ---
  
