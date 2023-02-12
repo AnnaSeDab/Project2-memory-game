@@ -18,6 +18,8 @@ checkButton.addEventListener("click", checkAnswer);
 
 function playGame() {
 
+    document.getElementById('start-btn').innerHTML = 'Next';
+
     document.getElementById('start-btn').style.visibility = 'hidden';
     document.getElementById('check-btn').style.visibility = 'visible';
 
