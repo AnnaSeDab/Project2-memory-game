@@ -72,7 +72,7 @@ function setRandomTiles() {
 
 
 
-    maxSquares++
+    
     console.log(`Max squares: ${maxSquares}`)
 }
 
@@ -116,6 +116,7 @@ function checkAnswer() {
         let currentScore = document.getElementById("score-no");
         currentScore.innerHTML = score;
         checkButton.innerHTML = "That's right!";
+        maxSquares++
     } else {
       checkButton.innerHTML = "Wrong answer!";
       looseLife();
