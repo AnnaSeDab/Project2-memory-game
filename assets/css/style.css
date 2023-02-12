@@ -114,6 +114,7 @@ input{
     background-color:goldenrod;
 }
 
-.monkey-tile{
-    background-color:red;
+.monkey-picture{
+    background: url(../images/cheekymonkey.jpg)center center;
+    background-size: cover;
 }

@@ -48,7 +48,7 @@ function playGame(){
 
     setRandomTiles();
 
-    if (level > 3){
+    if (level > 1){
       setMonkeyTile();
     }
 
@@ -80,7 +80,7 @@ function setRandomTiles() {
       for (let y = 0; y < arr.length + 1; y++) {
         let classBox = document.getElementById(`tile-${arr[y]}`);
         if (classBox && classBox.classList.contains("lit-tile")) {
-          classBox.className = "grid-item pickable"
+          classBox.className = "grid-item pickable";
           playButton.disabled = false;
         }
       }
@@ -96,10 +96,11 @@ function setMonkeyTile(){
     let monkeyTileIndex = getRandomBox();
     console.log(`monkey index: ${monkeyTileIndex}`)
     let monkey = document.getElementById(`tile-${monkeyTileIndex}`);
-    monkey.className = "monkey-tile";
-    setTimeout(() => {
-        monkey.className = "grid-item pickable"
-    }, 1000)
+    monkey.className = "monkey-picture";
+    setTimeout
+    (() => {
+    monkey.className = "grid-item pickable";
+    }, 3000)
 }
 
 function getRandomBox() {
