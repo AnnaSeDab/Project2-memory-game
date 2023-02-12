@@ -51,13 +51,14 @@ function setRandomTiles() {
         let boxElement = document.getElementById(`tile-${boxIndex}`);
         boxElement.className = "lit-tile";
         setTimeout(() => {
-            for (let y = 0; y < arr.length + 1; y++) {
-                let classBox = document.getElementById(`tile-${arr[y]}`);
-                if (classBox && classBox.classList.contains("lit-tile")) {
+            for (let y = 0; y < 25; y++) {
+                let classBox = document.getElementById(`tile-${y}`);
+                
                     classBox.className = "grid-item pickable";
-                }
+                
                 checkButton.disabled = false;
                 checkButton.style.backgroundColor = "#191B10";
+
                 document.body.addEventListener('click', function(evt) {
                   if (evt.target.classList.contains("pickable")) {
                       let whichTileClicked = evt.target.id;
@@ -148,10 +149,8 @@ function looseLife() {
 }
 
 function resetGrid() {
-    for (let y = 0; y < arrPicked.length + 1; y++) {
-        let classBox = document.getElementById(`tile-${arrPicked[y]}`);
-        if (classBox && classBox.classList.contains("lit-tile")) {
-            classBox.className = "grid-item pickable"
-        }
+    for (let y = 0; y < 25; y++) {
+        let classBox = document.getElementById(`tile-${y}`);
+            classBox.className = "grid-item"
     }
 }
