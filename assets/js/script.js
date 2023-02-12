@@ -20,7 +20,7 @@ let allElements = document.getElementById("game-container");
 
 function playGame() {
 
-    document.getElementById('start-btn').innerHTML = 'Next';
+    playButton.innerHTML = 'Next';
 
     playButton.disabled = true;
     playButton.style.backgroundColor = "grey";
@@ -34,6 +34,7 @@ function playGame() {
 
 function setRandomTiles() {
     playButton.disabled = true;
+    checkButton.innerHTML = "Check answer";
 
     if (level === 20) {
         console.log('Game is over');
@@ -113,10 +114,10 @@ function checkAnswer() {
         console.log(`current level: ${level}`);
         let currentScore = document.getElementById("score-no");
         currentScore.innerHTML = score;
-        alert("Good Job! Correct answer!")
+        checkButton.innerHTML = "That's right!";
     } else {
-        alert("Wrong answer!")
-        looseLife();
+      checkButton.innerHTML = "Wrong answer!";
+      looseLife();
     }
     checkButton.disabled = true;
     checkButton.style.backgroundColor = "grey";
