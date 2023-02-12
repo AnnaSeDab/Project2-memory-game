@@ -19,7 +19,7 @@ checkButton.addEventListener("click", checkAnswer);
 let gameContainer = document.getElementById("game-container");
 
 function playGame() {
-    console.log(gameContainer);
+  
     playButton.innerHTML = 'Next';
 
     playButton.disabled = true;
@@ -37,7 +37,6 @@ function setRandomTiles() {
     checkButton.innerHTML = "Check answer";
 
     if (level === 20) {
-        console.log('Game is over');
         return;
     }
 
@@ -47,38 +46,31 @@ function setRandomTiles() {
     while (counter < maxSquares) {
         let boxIndex = getRandomBox();
         arr.push(boxIndex);
-        console.log(`Add this to arrays: ${boxIndex}, and the array now contains: ${arr}`)
         let boxElement = document.getElementById(`tile-${boxIndex}`);
         boxElement.className = "lit-tile";
         setTimeout(() => {
             for (let y = 0; y < 25; y++) {
                 let classBox = document.getElementById(`tile-${y}`);
-                
-                    classBox.className = "grid-item pickable";
-                
+
+                classBox.className = "grid-item pickable";
+
                 checkButton.disabled = false;
                 checkButton.style.backgroundColor = "#191B10";
 
                 document.body.addEventListener('click', function(evt) {
-                  if (evt.target.classList.contains("pickable")) {
-                      let whichTileClicked = evt.target.id;
-                      document.getElementById(whichTileClicked).classList.add("lit-tile")
-                  }
-              }, false);
+                    if (evt.target.classList.contains("pickable")) {
+                        let whichTileClicked = evt.target.id;
+                        document.getElementById(whichTileClicked).classList.add("lit-tile")
+                    }
+                }, false);
             }
         }, 3000)
         counter++;
     }
-
-
-
-    
-    console.log(`Max squares: ${maxSquares}`)
 }
 
 function setMonkeyTile() {
     let monkeyTileIndex = getRandomBox();
-    console.log(`monkey index: ${monkeyTileIndex}`)
     let monkey = document.getElementById(`tile-${monkeyTileIndex}`);
     monkey.className = "monkey-picture";
     setTimeout
@@ -89,9 +81,7 @@ function setMonkeyTile() {
 
 function getRandomBox() {
     const allClassBoxes = document.getElementsByClassName("lit-tile");
-    console.log(`All class length inside get random: ${allClassBoxes.length}`);
     let randNum = Math.floor(Math.random() * (gridSize + 1));
-    console.log(`Rand num: ${randNum}`)
     if (arr.includes(randNum)) {
         return getRandomBox();
     }
@@ -111,15 +101,13 @@ function checkAnswer() {
     });
     if (arrayEquals(arr, arrPicked)) {
         score++;
-        level++;
-        console.log(`current level: ${level}`);
         let currentScore = document.getElementById("score-no");
         currentScore.innerHTML = score;
         checkButton.innerHTML = "That's right!";
         maxSquares++
     } else {
-      checkButton.innerHTML = "Wrong answer!";
-      looseLife();
+        checkButton.innerHTML = "Wrong answer!";
+        looseLife();
     }
     checkButton.disabled = true;
     checkButton.style.backgroundColor = "grey";
@@ -156,6 +144,6 @@ function looseLife() {
 function resetGrid() {
     for (let y = 0; y < 25; y++) {
         let classBox = document.getElementById(`tile-${y}`);
-            classBox.className = "grid-item"
+        classBox.className = "grid-item"
     }
 }
