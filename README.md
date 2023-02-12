@@ -71,6 +71,11 @@ On wider screens two sections are placed side by side.
  
 ## Languages used
 
+- HTML
+- CSS
+- MARKDOWN
+- JavaScript
+
 ---
 
 ## Resources used
