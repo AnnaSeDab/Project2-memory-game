@@ -4,25 +4,28 @@ let maxSquares = 4;
 let arr = [];
 let arrPicked = [];
 
-/* loading play button into variable and giving it event listener */
+/**loading play button into variable and giving it event listener 
+ */
 let playButton = document.getElementById("start-btn");
 playButton.addEventListener("click", playGame);
 
-/* loading check button into variable and giving it event listener 
-setting its initial state */
+/**loading check button into variable and giving it event listener setting its initial state 
+ */
 let checkButton = document.getElementById('check-btn');
 checkButton.style.backgroundColor = "grey";
 checkButton.disabled = true;
 checkButton.addEventListener("click", checkAnswer);
 
-/* loading score into a variable */
+/** loading score into a variable 
+ */
 let currentScore = document.getElementById("score-no");
 
-/* function run after play button pressed
-first it checks if we just lost the game in which would reset the game 
+/** function run after play button pressed
+first it checks if we just lost the game which would reset the game 
 changes appearance of buttons
 runs function to pick and light up tiles
-at certain level runs function to pick monkey tile*/
+at certain level runs function to pick monkey tile
+*/
 function playGame() {
 
 	if (lives === 0) {
@@ -59,23 +62,23 @@ function setRandomTiles() {
 		boxElement.className = "lit-tile";
 		counter++;
 	}
-  setTimeout(() => {
-    for (let y = 0; y < 25; y++) {
-      let classBox = document.getElementById(`tile-${y}`);
+	setTimeout(() => {
+		for (let y = 0; y < 25; y++) {
+			let classBox = document.getElementById(`tile-${y}`);
 
-      classBox.className = "grid-item pickable";
+			classBox.className = "grid-item pickable";
 
-      document.getElementById('check-btn').disabled = false;
-      document.getElementById('check-btn').style.backgroundColor = "#191B10";
+			document.getElementById('check-btn').disabled = false;
+			document.getElementById('check-btn').style.backgroundColor = "#191B10";
 
-      document.body.addEventListener('click', function(evt) {
-        if (evt.target.classList.contains("pickable")) {
-          let whichTileClicked = evt.target.id;
-          document.getElementById(whichTileClicked).classList.add("lit-tile");
-        }
-      }, false);
-    }
-  }, 2000);
+			document.body.addEventListener('click', function(evt) {
+				if (evt.target.classList.contains("pickable")) {
+					let whichTileClicked = evt.target.id;
+					document.getElementById(whichTileClicked).classList.add("lit-tile");
+				}
+			}, false);
+		}
+	}, 2000);
 }
 
 /** function sets monkey tile and then turnes it off after time out */
@@ -111,28 +114,30 @@ function checkAnswer() {
 		let indexOfPicked = idOfPicked.split("-");
 		let indexAsNumber = parseInt(indexOfPicked[1]);
 		arrPicked.push(indexAsNumber);
-		}
-		arr.sort(function(a, b) {
-			return a - b;
-		});
-		if (arrayEquals(arr, arrPicked)) {
-			if (maxSquares === 15){
-				gameWon();
-			}else{
-				levelWon();
-			}
+	}
+	arr.sort(function(a, b) {
+		return a - b;
+	});
+	if (arrayEquals(arr, arrPicked)) {
+		if (maxSquares === 15) {
+			gameWon();
 		} else {
-			looseLife();
+			levelWon();
 		}
-		checkButton.disabled = true;
-		checkButton.style.backgroundColor = "grey";
-		playButton.disabled = false;
-		playButton.style.backgroundColor = "#191B10";
+	} else {
+		looseLife();
+	}
+	checkButton.disabled = true;
+	checkButton.style.backgroundColor = "grey";
+	playButton.disabled = false;
+	playButton.style.backgroundColor = "#191B10";
 
-		resetGrid();
+	resetGrid();
 }
 
-function gameWon(){
+/**function updates buttons and actiaves functions playAgain and resetGrid
+ */
+function gameWon() {
 	checkButton.innerHTML = `You won! Your score is:  ${score}`;
 	playButton.innerHTML = "Play again";
 	playButton.style.backgroundColor = "#191B10";
@@ -142,13 +147,17 @@ function gameWon(){
 	resetGrid();
 }
 
-function levelWon(){
+/**function updates score and level
+ */
+function levelWon() {
 	score++;
 	currentScore.innerHTML = score;
 	checkButton.innerHTML = "That's right!";
 	maxSquares++;
 }
 
+/**function compares two arrays used to compare arr and arrPicked when checking answers
+ */
 function arrayEquals(a, b) {
 	return Array.isArray(a) &&
 		Array.isArray(b) &&
@@ -156,6 +165,8 @@ function arrayEquals(a, b) {
 		a.every((val, index) => val === b[index]);
 }
 
+/**function updates buttons and lives if answer was incorrect
+ */
 function looseLife() {
 	checkButton.innerHTML = "Wrong answer!";
 	if (lives === 3) {
@@ -172,6 +183,8 @@ function looseLife() {
 	}
 }
 
+/**function resets score, lives and level
+ */
 function playAgain() {
 	score = 0;
 	currentScore.innerHTML = score;
@@ -182,6 +195,8 @@ function playAgain() {
 	document.getElementById('star-three').style.visibility = 'visible';
 }
 
+/**function resets grid by setting class name to "grid-item"
+ */
 function resetGrid() {
 	for (let y = 0; y < 25; y++) {
 		let classBox = document.getElementById(`tile-${y}`);
