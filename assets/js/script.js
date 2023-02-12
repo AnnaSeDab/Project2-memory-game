@@ -1,4 +1,3 @@
-let level = 0;
 let gridSize = 24;
 let score = 0;
 let lives = 3;
@@ -33,7 +32,7 @@ function playGame() {
 
     setRandomTiles();
 
-    if (level > 1) {
+    if (maxSquares > 8) {
         setMonkeyTile();
     }
 }
@@ -41,10 +40,6 @@ function playGame() {
 function setRandomTiles() {
     playButton.disabled = true;
     checkButton.innerHTML = "Check answer";
-
-    if (level === 20) {
-        return;
-    }
 
     arr = [];
     arrPicked = [];
@@ -95,6 +90,16 @@ function getRandomBox() {
 }
 
 function checkAnswer() {
+  if (maxSquares === 15) {
+    checkButton.innerHTML = `You won! Your score is:  ${score}`;
+    playButton.innerHTML = "Play again";
+    playButton.style.backgroundColor = "#191B10";
+    playButton.disabled = false;
+    checkButton.disabled = true;
+    playAgain();
+    resetGrid();
+    return;
+}else{
     let pickedTiles = document.getElementsByClassName("lit-tile");
     for (let i = 0; i < pickedTiles.length; i++) {
         let idOfPicked = pickedTiles[i].id;
@@ -109,7 +114,7 @@ function checkAnswer() {
         score++;
         currentScore.innerHTML = score;
         checkButton.innerHTML = "That's right!";
-        maxSquares++
+        maxSquares++  
     } else {
         checkButton.innerHTML = "Wrong answer!";
         looseLife();
@@ -120,6 +125,7 @@ function checkAnswer() {
     playButton.style.backgroundColor = "#191B10";
 
     resetGrid();
+  }
 }
 
 function arrayEquals(a, b) {
@@ -138,7 +144,7 @@ function looseLife() {
         lives = lives - 1;
     } else if (lives === 1) {
         document.getElementById('star-three').style.visibility = 'hidden';
-        checkButton.innerHTML = "Wrong Answer! You lost!";
+        checkButton.innerHTML = `You lost! Your score is: ${score}`;
         playButton.innerHTML = "Play again";
         lives = lives - 1;
     }
