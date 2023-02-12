@@ -18,8 +18,14 @@ checkButton.addEventListener("click", checkAnswer);
 
 let gameContainer = document.getElementById("game-container");
 
+let currentScore = document.getElementById("score-no");
+
 function playGame() {
-  
+
+    if(lives === 0){
+      playAgain();
+    }
+
     playButton.innerHTML = 'Next';
 
     playButton.disabled = true;
@@ -64,7 +70,7 @@ function setRandomTiles() {
                     }
                 }, false);
             }
-        }, 3000)
+        }, 1000)
         counter++;
     }
 }
@@ -101,7 +107,6 @@ function checkAnswer() {
     });
     if (arrayEquals(arr, arrPicked)) {
         score++;
-        let currentScore = document.getElementById("score-no");
         currentScore.innerHTML = score;
         checkButton.innerHTML = "That's right!";
         maxSquares++
@@ -133,12 +138,20 @@ function looseLife() {
         lives = lives - 1;
     } else if (lives === 1) {
         document.getElementById('star-three').style.visibility = 'hidden';
-        checkButton.innerHTML = "You lost!";
+        checkButton.innerHTML = "Wrong Answer! You lost!";
         playButton.innerHTML = "Play again";
-        score = 0;
-        lives = 3;
-        maxSquares = 4;
+        lives = lives - 1;
     }
+}
+
+function playAgain(){
+  score = 0;
+  currentScore.innerHTML = score;
+  lives = 3;
+  maxSquares = 4;
+  document.getElementById('star-one').style.visibility = 'visible';
+  document.getElementById('star-two').style.visibility = 'visible';
+  document.getElementById('star-three').style.visibility = 'visible';
 }
 
 function resetGrid() {
