@@ -19,15 +19,19 @@ The goal of the Memory Game is to remember the highlighted tiles. The tiles reve
  
 ### Colour Scheme
  
+Colour palette is based in greens, grey and goldenrod. The background is ment to be not distracting for the player while goldenrod colour is ment to stand out and help player remember positioning of the tiles.
 
-### Typography
+![Color scheme palette](assets/images/colour-palette.png)
  
-
 ### Images
- 
+
+Background image was downladed from https://pixabay.com/
+Picture of the monkey was downloaded from https://www.irasutoya.com/
+Both pages allow for a noncommercial use of the images.
  
 ### Icons
- 
+
+Icons used to show remaining lives are imported from Font Awesome using a link placed in the head of each html page.
 
 ---
  
