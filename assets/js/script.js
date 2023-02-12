@@ -165,8 +165,8 @@ function looseLife() {
 }
 
 function resetGrid(){
-  for (let y = 0; y < arr.length + 1; y++) {
-    let classBox = document.getElementById(`tile-${arr[y]}`);
+  for (let y = 0; y < arrPicked.length + 1; y++) {
+    let classBox = document.getElementById(`tile-${arrPicked[y]}`);
     if (classBox && classBox.classList.contains("lit-tile")) {
       classBox.className = "grid-item pickable"
     }
