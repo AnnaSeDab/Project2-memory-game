@@ -16,10 +16,10 @@ checkButton.style.backgroundColor = "grey";
 checkButton.disabled = true;
 checkButton.addEventListener("click", checkAnswer);
 
-let allElements = document.getElementById("game-container");
+let gameContainer = document.getElementById("game-container");
 
 function playGame() {
-
+    console.log(gameContainer);
     playButton.innerHTML = 'Next';
 
     playButton.disabled = true;
@@ -144,7 +144,11 @@ function looseLife() {
         lives = lives - 1;
     } else if (lives === 1) {
         document.getElementById('star-three').style.visibility = 'hidden';
-        alert("You lost!");
+        checkButton.innerHTML = "You lost!";
+        playButton.innerHTML = "Play again";
+        score = 0;
+        lives = 3;
+        maxSquares = 4;
     }
 }
 
