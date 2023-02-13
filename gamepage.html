@@ -1,118 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="The page contains fun memory game to train your brain">
     <meta name="keywords" content="memory game, online game, fun game, memory, remember pattern game">
     <meta name="author" content="AnnaDab">
     <script src="https://kit.fontawesome.com/01ee20b63d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Memory game</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="flex-container">
-    <!-- score container -->
-    <div>
+      <div>
+        <!-- score container -->
         <div class="score-flexbox short-screen">
-            <div class="score-container">
-                <p class="score">Your score: </p>
-                <p class="score" id="score-no">0</p>
-            </div>
-            <div class="lives-container">
-                <i class="fa-solid fa-star star" id="star-one"></i>
-                <i class="fa-solid fa-star star" id="star-two"></i>
-                <i class="fa-solid fa-star star" id="star-three"></i>
-            </div>
-         </div>
-
-    <!-- start button -->     
-         <div>
-            <button class="button" id="start-btn" type="button">Play</button>
-            <button class="button" id="check-btn" type="button">Check answer</button>
-        </div>        
-    </div>
-
-    <!-- game container -->
-    <div id="game-container">
-        <div class="grid-item pickable" id="tile-0">
-        
+          <!-- score -->
+          <div class="score-container">
+            <p class="score">Your score: </p>
+            <p class="score" id="score-no">0</p>
+          </div>
+          <!-- lives -->
+          <div class="lives-container">
+            <i class="fa-solid fa-star star" id="star-one"></i>
+            <i class="fa-solid fa-star star" id="star-two"></i>
+            <i class="fa-solid fa-star star" id="star-three"></i>
+          </div>
         </div>
-        <div class="grid-item pickable" id="tile-1">
-        
+        <!-- start button -->
+        <div>
+          <button class="button" id="start-btn" type="button">Play</button>
+          <button class="button" id="check-btn" type="button">Check answer</button>
         </div>
-        <div class="grid-item pickable" id="tile-2">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-3">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-4">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-5">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-6">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-7">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-8">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-9">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-10">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-11">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-12">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-13">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-14">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-15">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-16">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-17">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-18">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-19">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-20">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-21">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-22">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-23">
-        
-        </div>
-        <div class="grid-item pickable" id="tile-24">
-        
-        </div>
-    </div>
+      </div>
+      <!-- game container -->
+      <div id="game-container">
+        <div class="grid-item pickable" id="tile-0"></div>
+        <div class="grid-item pickable" id="tile-1"></div>
+        <div class="grid-item pickable" id="tile-2"></div>
+        <div class="grid-item pickable" id="tile-3"></div>
+        <div class="grid-item pickable" id="tile-4"></div>
+        <div class="grid-item pickable" id="tile-5"></div>
+        <div class="grid-item pickable" id="tile-6"></div>
+        <div class="grid-item pickable" id="tile-7"></div>
+        <div class="grid-item pickable" id="tile-8"></div>
+        <div class="grid-item pickable" id="tile-9"></div>
+        <div class="grid-item pickable" id="tile-10"></div>
+        <div class="grid-item pickable" id="tile-11"></div>
+        <div class="grid-item pickable" id="tile-12"></div>
+        <div class="grid-item pickable" id="tile-13"></div>
+        <div class="grid-item pickable" id="tile-14"></div>
+        <div class="grid-item pickable" id="tile-15"></div>
+        <div class="grid-item pickable" id="tile-16"></div>
+        <div class="grid-item pickable" id="tile-17"></div>
+        <div class="grid-item pickable" id="tile-18"></div>
+        <div class="grid-item pickable" id="tile-19"></div>
+        <div class="grid-item pickable" id="tile-20"></div>
+        <div class="grid-item pickable" id="tile-21"></div>
+        <div class="grid-item pickable" id="tile-22"></div>
+        <div class="grid-item pickable" id="tile-23"></div>
+        <div class="grid-item pickable" id="tile-24"></div>
+      </div>
     </div>
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
