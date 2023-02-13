@@ -8,11 +8,21 @@ The goal of the Memory Game is to remember the highlighted tiles. The tiles reve
 ---
 ## Project goals
 
- 
+- Provide users with an easy game they can play in spare time
+- Provide users with a game to train their memory
+- Provide users with a game to train their focus
+- Provide users with a game they can play for just few minutes at a time without commitment
+
 ---
  
 ## User Stories
- 
+
+- I want to play a quick game
+- I want to train my memory
+- I want to improve my concentration
+- I have some time to kill and I want to use it productively whilst doing something fun
+- I am procrastinating but cannot commit to doing anything actually productive so I am pretending to do something productive by playing a game training my memory
+
 ---
 
 ## Design
