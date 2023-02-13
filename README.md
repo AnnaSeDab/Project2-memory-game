@@ -270,8 +270,10 @@ also in Firefox developer tools on different screen sizes.
 
 
 Code was written by me with the help of explanations found on W3Schools and Stack overflow.
+
 Function picking tiles to lit was constructed thanks to explanation and example given by my mentor Mitko Bachvarov.
 
+[Function used to compare arrays](https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript) was found on Stack overflow. 
 
 ---
 
