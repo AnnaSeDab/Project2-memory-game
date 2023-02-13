@@ -92,7 +92,7 @@ Game page is set up as flex box with two sections:
 Play and Check answer button. Depending on the stage of the game buttons can be disabled or their inner html changes.
 
 
-2) Game area is set up in a grid.
+2) Game area (which is set up in a grid.)
 
 
 On wider screens two sections are placed side by side.
@@ -170,14 +170,23 @@ Game page
 
 ### Manual tests
 Throughout the creation the game was tested to check if it is working as intended.
+
 Variables were checked via console logs to see if the functions work correctly.
+
 Play and Check buttons were clicked at various stages of the game to check if they behave as expected (disabled and enabled when they should be).
+
 Tiles were clicked at all the stages of the game to check if they are responsive only when the player is meant to answer and they are not responsive at any other stage of the game.
+
 Correct answer was provided to check if the score and number of tiles increased as expected.
+
 Wrong answer was provided to check if score and lives are deducted while the number of tiles stays the same.
+
 Mixtures of correct and wrong answers were given throughout the game to see if each time response is as it should be.
+
 Monkey tile was selected to see if it causes the answer to be wrong even if all the other tiles picked were correct.
+
 Game was lost to see if the appropriate message shows and the game can be reset.
+
 Game was won to see if appropriate message shows and the game can be reset.
 
 
@@ -187,13 +196,13 @@ Game was won to see if appropriate message shows and the game can be reset.
 ## Fixed bugs
 
 
-After the first round tiles remained responsive and could be clicked at any point as function resetting the grid was placed in the wrong place. Function was then moved and called straight after checking the answer.
+After the first round, tiles remained responsive and could be clicked at any point as function resetting the grid was placed in the wrong place. Function was then moved and called straight after checking the answer.
 
 
-Code checking if the last level was played and game won was placed in a wrong place which meant that game could be won even if on the last level the answer was wrong. If the statement checking if ast level was reached was moved.
+Code checking if the last level was played and game won was placed in a wrong place which meant that game could be won even if on the last level the answer was wrong. The if statement checking if last level was reached was moved.
 
 
-Function picking tiles to lit was not picking the right number of tiles. The code was constructed from scratch with the help of explanation and example given by my mentor Mitko Bachvarov.
+Function picking tiles to lit was not picking the right number of tiles. The code was constructed from scratch with the explanation and example given by my mentor Mitko Bachvarov.
 
 
 ---
