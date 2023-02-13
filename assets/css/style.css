@@ -5,19 +5,16 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-
 .heading{
     color:bisque;
     text-align: center;
     margin-top: 10vh;
 }
-
 .container{
     display: block;
     font-size: 16px;
     margin: 10vh auto;
 }
-
 .button {
     border: none;
     height: 40px;
@@ -30,11 +27,9 @@ body {
     font-size: 16px;
     margin: 8px auto;
 }
-
 .button:hover {
     background-color: #1D200B;
 }
-
 .instruction-container{
     border: none;
     width: 80vw;
@@ -47,12 +42,9 @@ body {
     margin: 8vh auto;
     padding:8px;
 }
-
 input{
     outline: none;
 }
-
-
 /* game page*/
 .flex-container{
     display:flex;
@@ -64,34 +56,31 @@ input{
     top:0;
     bottom: 0;
     left: 0;
-    right: 0; 
+    right: 0;
     margin: auto;
 }
-
 #game-container{
     height: 75vh;
     max-width: 90vw;
     max-height: 90vw;
     width: 75vh;
     background-color: #191B10;
-    margin: 0 20px;;
+    margin: 0 20px;
+   ;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     padding:5px;
     column-gap: 5px;
     row-gap: 5px;
 }
-
 .grid-item{
     background-color: grey;
 }
-
 .score-flexbox{
     display:flex;
     justify-content:center;
     flex-wrap: wrap;
 }
-
 .score-container{
     height: 40px;
     width: 155px;
@@ -104,12 +93,10 @@ input{
     margin: auto auto;
     padding-top: 20px;
 }
-
 .score{
     display: inline;
     margin: auto auto;
 }
-
 .lives-container{
     height: 40px;
     width: 170px;
@@ -118,18 +105,14 @@ input{
     display: block;
     text-align: center;
 }
-
 .star{
     color:goldenrod;
     font-size: 30px;
 }
-
 .lit-tile{
     background-color:goldenrod;
 }
-
 .monkey-picture{
     background: url(../images/cheekymonkey.jpg)center center;
     background-size: cover;
 }
-
